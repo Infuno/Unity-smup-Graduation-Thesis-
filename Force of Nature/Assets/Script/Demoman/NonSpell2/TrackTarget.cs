@@ -6,17 +6,28 @@ public class TrackTarget : MonoBehaviour
 {
 
     public Transform Player;
-    public GameObject prefab;
+    public bool Tracking = true;
 
     void Update()
     {
-        Vector3 difference = Player.position - transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ); ;
-
-        if(Input.GetKeyDown(KeyCode.C))
+        if (Tracking == true)
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            Vector3 difference = Player.position - transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90);
         }
+    }
+    public void StartTracking1()
+    {
+        Tracking = true;
+    }
+    public void StopTracking1()
+    {
+        Tracking = false;
+    }
+    public float getDirection()
+    {
+        float direction = transform.eulerAngles.z;
+        return direction;
     }
 }

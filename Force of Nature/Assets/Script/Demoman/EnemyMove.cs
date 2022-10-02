@@ -5,25 +5,22 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     public float MovingSpeed;
-    public float SwitchTime;
+    public Transform Boss;
 
     private float RangeX;
-    private float RangeY;
+    private float RangeY = 2;
 
-    private void Start()
+    public void ChangeLocation()
     {
-        StartCoroutine(MoveIt(SwitchTime));
+        RangeX = Random.Range(-2.0f, 2.0f);
+        RangeY = Random.Range(1.0f, 4.0f);
     }
-    private void FixedUpdate()
+    public void MoveTo()
     {
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(RangeX,RangeY), MovingSpeed * Time.deltaTime);
+        Boss.position = Vector2.MoveTowards(transform.position, new Vector2(RangeX, RangeY), MovingSpeed* Time.deltaTime);
     }
-
-    IEnumerator MoveIt(float timer)
+    public void ReturnCenter()
     {
-        RangeX = Random.Range(-5.0f, 5.0f);
-        RangeY = Random.Range(0.0f, 4.0f);
-        yield return new WaitForSeconds(timer);
-        StartCoroutine(MoveIt(SwitchTime));
+        Boss.position = Vector2.MoveTowards(transform.position, new Vector2(0, 2), MovingSpeed * Time.deltaTime);
     }
 }

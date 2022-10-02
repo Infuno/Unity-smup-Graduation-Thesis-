@@ -17,8 +17,13 @@ public class Spell2BulletSpawn : MonoBehaviour
 
     public float RateOfFire;
     public float SpinSpeed;
+    public GameObject Lazer;
 
     private float BulletCooldown;
+    private void Start()
+    {
+        Lazer.SetActive(true);
+    }
     private void FixedUpdate()
     {
         BulletCooldown += Time.deltaTime;

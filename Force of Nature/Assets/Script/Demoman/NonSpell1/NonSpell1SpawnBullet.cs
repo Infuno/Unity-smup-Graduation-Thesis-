@@ -14,7 +14,10 @@ public class NonSpell1SpawnBullet : MonoBehaviour
     public float ShotCooldown;
     public float SpinSpeed;
 
+    public EnemyMove moveScripe;
+
     private bool IsFire;
+    public bool Switch = false;
     private float BulletCooldown;
     private void FixedUpdate()
     {
@@ -28,7 +31,21 @@ public class NonSpell1SpawnBullet : MonoBehaviour
         if (IsFire == false)
         {
             StartCoroutine(Cooldown(ShotCooldown));
-            Spinner.transform.eulerAngles = new Vector3(0, 0, 270);
+            if (Switch == false)
+            {
+                Spinner.transform.eulerAngles = new Vector3(0, 0, 90);
+                SpinSpeed = -SpinSpeed;
+                Switch = true;
+                return;
+            }
+            if (Switch == true)
+            {
+                Spinner.transform.eulerAngles = new Vector3(0, 0, 270);
+                SpinSpeed = -SpinSpeed;
+                Switch = false;
+                return;
+            }
+            
         }
     }
     private void Shoot()
@@ -49,11 +66,13 @@ public class NonSpell1SpawnBullet : MonoBehaviour
     }
     IEnumerator Duration(float timer)
     {
+        moveScripe.ChangeLocation();
         yield return new WaitForSeconds(timer);
         IsFire = false;
     }
     IEnumerator Cooldown(float timer)
     {
+        moveScripe.MoveTo();
         yield return new WaitForSeconds(timer);
         IsFire = true;
     }

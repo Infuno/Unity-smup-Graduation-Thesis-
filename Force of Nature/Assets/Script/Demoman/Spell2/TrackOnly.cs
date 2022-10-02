@@ -13,7 +13,7 @@ public class TrackOnly : MonoBehaviour
         {
         Vector3 difference = Player.position - transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ); ;
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         }
     }
     public void StartTracking()

@@ -33,5 +33,14 @@ public class EnemyHealth : MonoBehaviour
     {
         return CurrentHealth;
     }
-
+    public float SetMaxHealth(float MHealth)
+    {
+        MaxHealth = MHealth;
+        return MaxHealth;
+    }
+    public float SetCurrentHealth(float CHelath)
+    {
+        CurrentHealth = CHelath;
+        return CurrentHealth;
+    }
 }

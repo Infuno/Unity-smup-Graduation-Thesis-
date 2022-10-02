@@ -23,8 +23,11 @@ public class Spell1BulletSpawn : MonoBehaviour
     public float SpawnerDistance;
     public float BackwardRate;
 
-    private bool IsFire;
+    public EnemyMove moveScript;
+
+    private bool IsFire = true;
     private float BulletCooldown;
+
     private void FixedUpdate()
     {
         BulletCooldown += Time.deltaTime;
@@ -34,12 +37,14 @@ public class Spell1BulletSpawn : MonoBehaviour
             StartCoroutine(Duration(FiringDurarion));
             Spin();
             MoveSpawner(BackwardRate);
+            moveScript.ChangeLocation();
         }
         if (IsFire == false)
         {
             StartCoroutine(Cooldown(ShotCooldown));
             Spinner.transform.eulerAngles = new Vector3(0, 0, 0);
             ResetSpawner(SpawnerDistance);
+            moveScript.MoveTo();
         }
     }
     private void Shoot()

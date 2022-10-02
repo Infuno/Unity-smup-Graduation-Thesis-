@@ -10,7 +10,7 @@ public class BackGroundLoop : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(translation:Vector3.left * Speed * Time.deltaTime);
-        if(transform.position.x < -20)
+        if(transform.position.y <= -7.4)
         {
             transform.position = StartPosition;
         }
