@@ -63,7 +63,7 @@ public class Boss1AttackSequence : MonoBehaviour
             SpellBackground2.SetActive(true);
             StartCoroutine(NonSpellClear());
 
-            enemyHealth.MaxHealth = 2000;
+            enemyHealth.MaxHealth = 1000;
             Regen = true;
             Nonspell1.SetActive(false);
             StartCoroutine(WaitTime(1, Spell1));
@@ -75,7 +75,7 @@ public class Boss1AttackSequence : MonoBehaviour
             SpellBackground2.SetActive(false);
             StartCoroutine(SpellClear());
 
-            enemyHealth.MaxHealth = 3000;
+            enemyHealth.MaxHealth = 2000;
             Regen = true;
             Spell1.SetActive(false);
             StartCoroutine(WaitTime(1, Nonspell2));

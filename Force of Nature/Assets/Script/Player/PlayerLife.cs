@@ -15,10 +15,23 @@ public class PlayerLife : MonoBehaviour
     }
     public void DisplayLife()
     {
-        for (int i = CurrentLife; i <= 5; i++)
+        try
         {
-            Life[i - 1].SetActive(false);
+            for (int i = 0; i < CurrentLife; i++)
+            {
+                Life[i].SetActive(true);
+            }
+            for (int i = CurrentLife; i <= Life.Length; i++)
+            {
+                Life[i-1].SetActive(false);
+            }
         }
+        catch(System.IndexOutOfRangeException ex)
+        {
+
+        }
+
+        
     }
     public void IsDead()
     {

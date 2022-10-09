@@ -5,14 +5,14 @@ using UnityEngine;
 public class LaserBehavior : MonoBehaviour
 {
     public float Damage;
-    public Collider2D collider;
+    public Collider2D lazercollider;
     public void OnCollider()
     {
-        collider.enabled = true;
+        lazercollider.enabled = true;
     }
     public void OffCollider()
     {
-        collider.enabled = false;
+        lazercollider.enabled = false;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

@@ -14,7 +14,12 @@ public class BulletBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
+        EnemyHealth boss = hitInfo.GetComponent<EnemyHealth>();
+        if (boss != null)
+        {
+            boss.TakeDamage(Damage);
+        }
+        NonBossHealth enemy = hitInfo.GetComponent<NonBossHealth>();
         if (enemy != null)
         {
             enemy.TakeDamage(Damage);

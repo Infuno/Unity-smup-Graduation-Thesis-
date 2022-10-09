@@ -18,9 +18,13 @@ public class PlayerBomb : MonoBehaviour
     }
     public void DisplayBomb()
     {
-        for (int i = CurrentBomb; i <= 5; i++)
+        for(int i = 0; i < CurrentBomb; i++)
         {
-            Spell[i].SetActive(false);
+            Spell[i].SetActive(true);
+        }
+        for (int i = CurrentBomb+1; i <= Spell.Length; i++)
+        {
+            Spell[i-1].SetActive(false);
         }
     }
     public void SpellUse()
@@ -47,7 +51,7 @@ public class PlayerBomb : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             this.GetComponent<SpriteRenderer>().enabled = true;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
         this.GetComponent<CircleCollider2D>().enabled = true;
     }
 }

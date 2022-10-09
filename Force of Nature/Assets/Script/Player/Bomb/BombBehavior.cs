@@ -8,7 +8,7 @@ public class BombBehavior : MonoBehaviour
     public float speed;
     public float Damage;
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem particleStar;
 
     public GameObject Engine;
     public GameObject Trail;
@@ -33,6 +33,7 @@ public class BombBehavior : MonoBehaviour
         }
     }
 
+    [System.Obsolete]
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         EnemyHealth enemyhealth = hitInfo.GetComponent<EnemyHealth>();
@@ -40,10 +41,19 @@ public class BombBehavior : MonoBehaviour
         {
             rb.velocity = transform.up * speed*0;
             animator.SetTrigger("IsHit");
-            particleSystem.loop = false;
+            particleStar.loop = false;
             Engine.SetActive(false);
             enemyhealth.TakeDamage(Damage);
-        } 
+        }
+        NonBossHealth nonbosshealth = hitInfo.GetComponent<NonBossHealth>();
+        if (nonbosshealth != null)
+        {
+            rb.velocity = transform.up * speed * 0;
+            animator.SetTrigger("IsHit");
+            particleStar.loop = false;
+            Engine.SetActive(false);
+            nonbosshealth.TakeDamage(Damage);
+        }
     }
     private void OnTriggerStay2D(Collider2D hitInfo)
     {
@@ -52,7 +62,13 @@ public class BombBehavior : MonoBehaviour
         {
             enemyhealth.TakeDamage(Damage);
         }
+        NonBossHealth nonbosshealth = hitInfo.GetComponent<NonBossHealth>();
+        if (nonbosshealth != null)
+        {
+            nonbosshealth.TakeDamage(Damage);
+        }
     }
+
 
     public void RandomRotate()
     {

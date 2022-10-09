@@ -49,10 +49,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.C))
+        /*if(Input.GetKeyUp(KeyCode.C))
         {
             PlayerTakeDamage(70);
-        }
+        }*/
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
@@ -72,10 +72,13 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator ReSpawn()
     {
         yield return new WaitForSeconds(1.0f);
-        PlayerDie(false); 
+        PlayerDie(false);
+        this.GetComponent<PlayerBomb>().CurrentBomb = this.GetComponent<PlayerBomb>().MaxBomb;
+        
         yield return new WaitForSeconds(1.2f);
         CurrentHealth = MaxHealth;
-        
+
+        this.GetComponent<PlayerBomb>().DisplayBomb();
         this.GetComponent<PlayerMovement>().enabled = true;
         this.GetComponent<SpriteRenderer>().enabled = true;
         this.GetComponent<PlayerBomb>().enabled = true;
