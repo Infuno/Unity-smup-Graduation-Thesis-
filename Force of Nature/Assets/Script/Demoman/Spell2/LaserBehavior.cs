@@ -9,6 +9,7 @@ public class LaserBehavior : MonoBehaviour
     public void OnCollider()
     {
         lazercollider.enabled = true;
+        FindObjectOfType<AudioManager>().Play("Lazer1");
     }
     public void OffCollider()
     {
@@ -21,5 +22,9 @@ public class LaserBehavior : MonoBehaviour
         {
             playerHealth.PlayerTakeDamage(Damage);
         }
+    }
+    public void PlaySound()
+    {
+        FindObjectOfType<AudioManager>().Play("Lazer2");
     }
 }

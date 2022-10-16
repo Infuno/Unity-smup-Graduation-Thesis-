@@ -57,6 +57,7 @@ public class Boss1AttackSequence : MonoBehaviour
     {
         if(enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase ==1)
         {
+            FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
             SpellNameHUD.text = "Large Rainbow Halo";
             SpellBackground1.SetActive(true);
@@ -70,6 +71,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 2)
         {
+            FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(false);
             SpellBackground1.SetActive(false);
             SpellBackground2.SetActive(false);
@@ -82,6 +84,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 3)
         {
+            FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
             SpellNameHUD.text = "Lotus Butterfly";
             SpellBackground1.SetActive(true);
@@ -95,6 +98,8 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 4)
         {
+            this.GetComponent<AudioSource>().enabled = true;
+
             SpellHUD.SetActive(false);
             SpellBackground1.SetActive(true);
             SpellBackground2.SetActive(true);
@@ -122,7 +127,7 @@ public class Boss1AttackSequence : MonoBehaviour
     }
     IEnumerator StopDeadEffect()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
     IEnumerator NonSpellClear()

@@ -7,7 +7,7 @@ public class Fairy1Bullet : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public float Damage;
-
+    public Animator animator;
 
     private void Start()
     {
@@ -16,16 +16,25 @@ public class Fairy1Bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        PlayerHealth playerHealth = hitInfo.GetComponent<PlayerHealth>();
+        rb.velocity = new Vector2 (0,0);
+       PlayerHealth playerHealth = hitInfo.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
             playerHealth.PlayerTakeDamage(Damage);
         }
-        Destroy(gameObject);
+        animator.SetTrigger("IsHit");
     }
     IEnumerator TimeOut()
     {
         yield return new WaitForSeconds(10f);
+        Destroy(gameObject);
+    }
+    public void HitBoxOn()
+    {
+        this.GetComponent<Collider2D>().enabled = true;
+    }
+    public void DestroyBullet()
+    {
         Destroy(gameObject);
     }
 }

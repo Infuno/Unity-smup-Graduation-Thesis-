@@ -10,6 +10,7 @@ public class ButtonBehavior : MonoBehaviour
     public void Boss1isHover()
     {
         BossAnimator.SetBool("IsHover",true);
+        FindObjectOfType<AudioManager>().Play("Hover");
     }
     public void Boss1isOut()
     {
@@ -18,5 +19,11 @@ public class ButtonBehavior : MonoBehaviour
     public void LoadMap1()
     {
         SceneManager.LoadScene(1);
+        FindObjectOfType<AudioManager>().Play("Click");
+    }
+    public void LoadMap2()
+    {
+        SceneManager.LoadScene(2);
+        FindObjectOfType<AudioManager>().Play("Click");
     }
 }

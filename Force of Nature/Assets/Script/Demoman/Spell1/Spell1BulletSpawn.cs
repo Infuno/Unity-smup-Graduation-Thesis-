@@ -51,6 +51,7 @@ public class Spell1BulletSpawn : MonoBehaviour
     {
         if (BulletCooldown > RateOfFire)
         {
+            FindObjectOfType<AudioManager>().Play("NonSpell1");
             Instantiate(BulletPrefab, firepoint1.position, firepoint1.rotation);
             Instantiate(BulletPrefab, firepoint2.position, firepoint2.rotation);
             Instantiate(BulletPrefab, firepoint3.position, firepoint3.rotation);

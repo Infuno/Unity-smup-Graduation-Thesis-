@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/UtsuhoScene.unity
+    guid: 881ec0980cb90cf40b2ff63e36241f1e
   m_configObjects: {}

@@ -25,6 +25,7 @@ public class NonBossHealth : MonoBehaviour
     public void Die()
     {
         this.GetComponent<Animator>().SetTrigger("IsDead");
+        this.GetComponent<AudioSource>().enabled = true;
     }
     public float GetCurrentHealth()
     {

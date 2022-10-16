@@ -132,6 +132,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8694293304970786085, guid: cd1cf939b9458c248a1b8dcbac5b45f8, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6017448b94f2b55489f266b37844a917, type: 3}
+    - target: {fileID: 8694293304970786085, guid: cd1cf939b9458c248a1b8dcbac5b45f8, type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1cf939b9458c248a1b8dcbac5b45f8, type: 3}
 --- !u!4 &2207111408901793475 stripped

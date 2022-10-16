@@ -19,6 +19,14 @@ public class Spell1BulletBehavior : MonoBehaviour
         {
             playerHealth.PlayerTakeDamage(Damage);
         }
+        this.GetComponent<Animator>().SetTrigger("IsHit");
+    }
+    public void HitBoxOn()
+    {
+        this.GetComponent<Collider2D>().enabled = true;
+    }
+    public void DestroyBullet()
+    {
         Destroy(gameObject);
     }
 }

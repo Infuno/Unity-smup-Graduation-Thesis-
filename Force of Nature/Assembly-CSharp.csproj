@@ -79,8 +79,10 @@
     <Compile Include="Assets\Script\Player\ReturnOnDead.cs" />
     <Compile Include="Assets\Script\Fairy\2\Fairy2Behavior.cs" />
     <Compile Include="Assets\Script\Player\BulletBehavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell1\UtsuhoNonSpell1Spawn.cs" />
     <Compile Include="Assets\Script\Button\ButtonBehavior.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\Spell2BulletSpawn.cs" />
+    <Compile Include="Assets\Script\Sound.cs" />
     <Compile Include="Assets\Script\Fairy\BigFairy1MoveSequence.cs" />
     <Compile Include="Assets\Script\Demoman\EnemyMove.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell2\NonSpell2ActiveOrder.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\Script\Fairy\Fairy1Behavior.cs" />
     <Compile Include="Assets\Script\Fairy\SpinningPoint.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\ActiveAttack.cs" />
+    <Compile Include="Assets\Script\AudioManager.cs" />
     <Compile Include="Assets\Script\Fairy\TrackTargetOnly.cs" />
     <Compile Include="Assets\Script\Fairy\Big2\BigFairy2Move.cs" />
     <Compile Include="Assets\Script\Demoman\Boss1AttackSequence.cs" />
@@ -96,8 +99,10 @@
     <Compile Include="Assets\Script\Demoman\NonSpell1\NonSpell1BulletBehavior.cs" />
     <Compile Include="Assets\Script\Fairy\5\Fairy5MoveSequence.cs" />
     <Compile Include="Assets\Script\LayerIgnore.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell1\UtsuhoNonSpell1BulletBahavior.cs" />
     <Compile Include="Assets\Script\Fairy\2\Fairy2Time.cs" />
     <Compile Include="Assets\Script\Fairy\2\Fairy2Sequence.cs" />
+    <Compile Include="Assets\Script\Button\YouDiedButtonBehavior.cs" />
     <Compile Include="Assets\Script\NonBossHealth.cs" />
     <Compile Include="Assets\Script\Player\Bomb\BombBehavior.cs" />
     <Compile Include="Assets\Script\Player\PlayerHealth.cs" />
