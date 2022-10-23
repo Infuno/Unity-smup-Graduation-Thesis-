@@ -75,6 +75,7 @@
     <Compile Include="Assets\Script\Demoman\NonSpell2\NonSpell2BulletBehavior.cs" />
     <Compile Include="Assets\Script\Player\PlayerLife.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\LaserBehavior.cs" />
+    <Compile Include="Assets\Script\TimerCounter.cs" />
     <Compile Include="Assets\Script\Fairy\4\Fairy4Time.cs" />
     <Compile Include="Assets\Script\Player\ReturnOnDead.cs" />
     <Compile Include="Assets\Script\Fairy\2\Fairy2Behavior.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Assets\Script\Fairy\2\Fairy2Time.cs" />
     <Compile Include="Assets\Script\Fairy\2\Fairy2Sequence.cs" />
     <Compile Include="Assets\Script\Button\YouDiedButtonBehavior.cs" />
+    <Compile Include="Assets\Script\ScoreBehavior.cs" />
     <Compile Include="Assets\Script\NonBossHealth.cs" />
     <Compile Include="Assets\Script\Player\Bomb\BombBehavior.cs" />
     <Compile Include="Assets\Script\Player\PlayerHealth.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell2\TrackTarget.cs" />
     <Compile Include="Assets\Script\Demoman\EnemyHealth.cs" />
+    <Compile Include="Assets\Script\BonusScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

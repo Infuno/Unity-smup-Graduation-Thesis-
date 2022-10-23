@@ -17,6 +17,9 @@ public class Boss1AttackSequence : MonoBehaviour
     public Animator AnimatorBackground1;
     public Animator AnimatorBackground2;
     public Animator BulletClearer;
+    public GameObject TimeOutObject;
+    public TimerCounter timerCounter;
+    public GameObject BonusHUD;
 
     public GameObject SpellHUD;
     public Text SpellNameHUD;
@@ -24,13 +27,15 @@ public class Boss1AttackSequence : MonoBehaviour
     public Animator[] DeadEffect;
 
     public EnemyMove moveScript;
-    private int CurrentPhase = 1;
 
+    private int CurrentPhase = 1;
+    private bool AllowSkipPhase = true;
     bool Regen = false;
     private void Start()
     {
         MagicCircle.SetActive(true);
         Nonspell1.SetActive(true);
+        TimeOutObject.SetActive(true);
     }
     private void Regenerate()
     {
@@ -42,6 +47,7 @@ public class Boss1AttackSequence : MonoBehaviour
             Regen = false;
             enemyCollider.enabled = true;
             CurrentPhase +=1;
+
         }
     }
     private void Update()
@@ -55,8 +61,17 @@ public class Boss1AttackSequence : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(timerCounter.CurrentTimer == 0 && AllowSkipPhase == true)
+        {
+            enemyHealth.SetCurrentHealth(0);
+            StartCoroutine(ReActiveSkip());
+            AllowSkipPhase = false;
+
+        }
         if(enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase ==1)
         {
+            timerCounter.ActiveTimer(30);
+            timerCounter.SetMaxScore(1500000);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
             SpellNameHUD.text = "Large Rainbow Halo";
@@ -71,6 +86,8 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 2)
         {
+            BonusHUD.SetActive(true);
+            timerCounter.ActiveTimer(40);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(false);
             SpellBackground1.SetActive(false);
@@ -84,6 +101,8 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 3)
         {
+            timerCounter.ActiveTimer(60);
+            timerCounter.SetMaxScore(3000000);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
             SpellNameHUD.text = "Lotus Butterfly";
@@ -98,8 +117,9 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 4)
         {
+            BonusHUD.SetActive(true);
             this.GetComponent<AudioSource>().enabled = true;
-
+            TimeOutObject.SetActive(false);
             SpellHUD.SetActive(false);
             SpellBackground1.SetActive(true);
             SpellBackground2.SetActive(true);
@@ -141,5 +161,10 @@ public class Boss1AttackSequence : MonoBehaviour
         BulletClearer.SetBool("SpellClear", true);
         yield return new WaitForSeconds(1);
         BulletClearer.SetBool("SpellClear", false);
+    }
+    IEnumerator ReActiveSkip()
+    {
+        yield return new WaitForSeconds(1);
+        AllowSkipPhase = true;
     }
 }
