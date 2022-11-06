@@ -10,6 +10,7 @@ public class UtsuhoNonSpell1BulletBahavior : MonoBehaviour
 
     private void Start()
     {
+        FindObjectOfType<AudioManager>().Play("BulletShoot");
         rb.velocity = transform.up * speed;
         StartCoroutine(SpeedUp());
     }
@@ -34,6 +35,7 @@ public class UtsuhoNonSpell1BulletBahavior : MonoBehaviour
     IEnumerator SpeedUp()
     {
         yield return new WaitForSeconds(1);
+        FindObjectOfType<AudioManager>().Play("BulletExpand");
         rb.velocity = transform.up * speed *3;
     }
 }

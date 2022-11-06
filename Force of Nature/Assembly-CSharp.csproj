@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Player\PlayerBomb.cs" />
     <Compile Include="Assets\Script\Demoman\TestAutoSpin.cs" />
+    <Compile Include="Assets\Script\Utsuho\UtsuhoAttackSequence.cs" />
     <Compile Include="Assets\Script\Fairy\3\Fairy3Time.cs" />
     <Compile Include="Assets\Script\Fairy\4\Fairy4Behavior.cs" />
     <Compile Include="Assets\Script\Stage1SpawnBehavior.cs" />
@@ -67,11 +68,17 @@
     <Compile Include="Assets\Script\MusicTest.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\Spell2ActiveOrder.cs" />
     <Compile Include="Assets\Script\Demoman\HealthBehavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2BulletBehavior.cs" />
     <Compile Include="Assets\Script\Fairy\4\Fairy4MoveSequence.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2SpawnBullet.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\Bullet1.cs" />
     <Compile Include="Assets\Script\Demoman\Spell1\Spell1BulletBehavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell2\UtsuhoNonSpellSpawnBullet.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2Spin.cs" />
     <Compile Include="Assets\Script\Demoman\Spell1\Spell1BulletSpawn.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell2\UtsuhoNonspell2Spinner.cs" />
     <Compile Include="Assets\Script\Player\PlayerHealthBarBehavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell1\UtsuhoSpell1Spawn.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell2\NonSpell2BulletBehavior.cs" />
     <Compile Include="Assets\Script\Player\PlayerLife.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\LaserBehavior.cs" />
@@ -81,22 +88,29 @@
     <Compile Include="Assets\Script\Fairy\2\Fairy2Behavior.cs" />
     <Compile Include="Assets\Script\Player\BulletBehavior.cs" />
     <Compile Include="Assets\Script\Utsuho\NonSpell1\UtsuhoNonSpell1Spawn.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell2\UtsuhoGetPlayerLocation.cs" />
     <Compile Include="Assets\Script\Button\ButtonBehavior.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\Spell2BulletSpawn.cs" />
     <Compile Include="Assets\Script\Sound.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2Behavior.cs" />
     <Compile Include="Assets\Script\Fairy\BigFairy1MoveSequence.cs" />
     <Compile Include="Assets\Script\Demoman\EnemyMove.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell2\NonSpell2ActiveOrder.cs" />
     <Compile Include="Assets\Script\Player\PlayerShoot.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell2\UtsuhoNonSpell2Lazer.cs" />
+    <Compile Include="Assets\Script\BonusScore.cs" />
     <Compile Include="Assets\Script\BackGroundLoop.cs" />
     <Compile Include="Assets\Script\Fairy\Fairy1Behavior.cs" />
     <Compile Include="Assets\Script\Fairy\SpinningPoint.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2LazerGuider.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\ActiveAttack.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell2\UtsuhoSpell2LazerSpin.cs" />
     <Compile Include="Assets\Script\AudioManager.cs" />
     <Compile Include="Assets\Script\Fairy\TrackTargetOnly.cs" />
     <Compile Include="Assets\Script\Fairy\Big2\BigFairy2Move.cs" />
     <Compile Include="Assets\Script\Demoman\Boss1AttackSequence.cs" />
     <Compile Include="Assets\Script\Fairy\BigFairy1Behavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell2\UtsuhoNonSpell2BulletBehavior.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell1\NonSpell1BulletBehavior.cs" />
     <Compile Include="Assets\Script\Fairy\5\Fairy5MoveSequence.cs" />
     <Compile Include="Assets\Script\LayerIgnore.cs" />
@@ -112,12 +126,16 @@
     <Compile Include="Assets\Script\Fairy\Fairy1Bullet.cs" />
     <Compile Include="Assets\Script\Demoman\Spell2\TrackOnly.cs" />
     <Compile Include="Assets\Script\Fairy\Big2\BigFairy2Behavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\Spell1\UtsuhoSpell1BigBulletBehavior.cs" />
     <Compile Include="Assets\Script\Fairy\Fairy1MoveSequence.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell1\NonSpell1SpawnBullet.cs" />
     <Compile Include="Assets\Script\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Script\Demoman\NonSpell2\TrackTarget.cs" />
     <Compile Include="Assets\Script\Demoman\EnemyHealth.cs" />
-    <Compile Include="Assets\Script\BonusScore.cs" />
+    <Compile Include="Assets\Script\Utsuho\CautionOff.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell3\UtsuhoNonSpell3FollowPlayer.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell3\UtsuhoNonSpell3HeatSeekerBulletBehavior.cs" />
+    <Compile Include="Assets\Script\Utsuho\NonSpell3\UtsuhoNonSpell3BulletSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

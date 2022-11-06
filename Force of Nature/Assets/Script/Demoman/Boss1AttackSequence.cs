@@ -30,7 +30,7 @@ public class Boss1AttackSequence : MonoBehaviour
 
     private int CurrentPhase = 1;
     private bool AllowSkipPhase = true;
-    bool Regen = false;
+    private bool Regen = false;
     private void Start()
     {
         MagicCircle.SetActive(true);
@@ -39,6 +39,7 @@ public class Boss1AttackSequence : MonoBehaviour
     }
     private void Regenerate()
     {
+        TimeOutObject.SetActive(false);
         enemyHealth.CurrentHealth += enemyHealth.MaxHealth /200;
         enemyCollider.enabled = false;
         if (enemyHealth.CurrentHealth >= enemyHealth.MaxHealth)
@@ -70,7 +71,6 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if(enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase ==1)
         {
-            timerCounter.ActiveTimer(30);
             timerCounter.SetMaxScore(1500000);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
@@ -82,12 +82,11 @@ public class Boss1AttackSequence : MonoBehaviour
             enemyHealth.MaxHealth = 1000;
             Regen = true;
             Nonspell1.SetActive(false);
-            StartCoroutine(WaitTime(1, Spell1));
+            StartCoroutine(WaitTime(2, Spell1,30));
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 2)
         {
             BonusHUD.SetActive(true);
-            timerCounter.ActiveTimer(40);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(false);
             SpellBackground1.SetActive(false);
@@ -97,12 +96,12 @@ public class Boss1AttackSequence : MonoBehaviour
             enemyHealth.MaxHealth = 2000;
             Regen = true;
             Spell1.SetActive(false);
-            StartCoroutine(WaitTime(1, Nonspell2));
+            StartCoroutine(WaitTime(2, Nonspell2,40));
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 3)
         {
-            timerCounter.ActiveTimer(60);
             timerCounter.SetMaxScore(3000000);
+            timerCounter.BonusScoreText.text = ("3000000");
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
             SpellNameHUD.text = "Lotus Butterfly";
@@ -113,7 +112,7 @@ public class Boss1AttackSequence : MonoBehaviour
             enemyHealth.MaxHealth = 3000;
             Regen = true;
             Nonspell2.SetActive(false);
-            StartCoroutine(WaitTime(2, Spell2));
+            StartCoroutine(WaitTime(2, Spell2,60));
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 4)
         {
@@ -131,11 +130,12 @@ public class Boss1AttackSequence : MonoBehaviour
             StartCoroutine(StopDeadEffect());
         }
     }
-    IEnumerator WaitTime(float time, GameObject nextAttack)
+    IEnumerator WaitTime(float WaitTime, GameObject nextAttack, float Timer)
     {
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(WaitTime);
         nextAttack.SetActive(true);
-        
+        TimeOutObject.SetActive(true);
+        timerCounter.ActiveTimer(Timer);
     }
     private void BossIsDead()
     {
@@ -147,7 +147,7 @@ public class Boss1AttackSequence : MonoBehaviour
     }
     IEnumerator StopDeadEffect()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
     IEnumerator NonSpellClear()

@@ -474,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &84964211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2324,6 +2325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &445925166
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3823,6 +3825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &653735956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4737,6 +4740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &819567191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5118,6 +5122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &853010696
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10660,6 +10665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   StartPosition: {x: 0, y: 7.9, z: 0}
+  ResetPosition: -7.4
 --- !u!212 &1532833405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11302,7 +11308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1599278430
 CircleCollider2D:
   m_ObjectHideFlags: 0

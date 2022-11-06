@@ -23,4 +23,8 @@ public class EnemyMove : MonoBehaviour
     {
         Boss.position = Vector2.MoveTowards(transform.position, new Vector2(0, 2), MovingSpeed * Time.deltaTime);
     }
+    public void MoveToCenterScreen()
+    {
+        Boss.position = Vector2.MoveTowards(transform.position, new Vector2(0, 0), MovingSpeed * Time.deltaTime);
+    }
 }

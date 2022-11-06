@@ -47,8 +47,9 @@ public class UtsuhoNonSpell1Spawn : MonoBehaviour
     {
         Moving = false;
         IsFire = true;
-        yield return new WaitForSeconds(2);
         
+        yield return new WaitForSeconds(2);
+        animator.SetBool("Charge", false);
         StartCoroutine(FireOff());
         
     }
@@ -56,9 +57,14 @@ public class UtsuhoNonSpell1Spawn : MonoBehaviour
     {
         
         IsFire = false;
+
         yield return new WaitForSeconds(1);
+        
         Moving = true;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        animator.SetBool("Charge", true);
+        yield return new WaitForSeconds(1);
+        
         StartCoroutine(FireOn());
     }
     private void CheckMove()

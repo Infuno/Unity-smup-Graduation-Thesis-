@@ -19,8 +19,13 @@ public class TimerCounter : MonoBehaviour
     private bool TimerSound = true;
     private void FixedUpdate()
     {
+        print(CurrentBonusScore);
         CountingDown();
         BonusScoreText.text = SetBonusPoint().ToString("0");
+        if(CurrentBonusScore == double.PositiveInfinity)
+        {
+            BonusScoreText.text = MaxBonusScore.ToString("0");
+        }
     }
     public void CountingDown()
     {

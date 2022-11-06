@@ -18,6 +18,7 @@ public class BonusScore : MonoBehaviour
     }
     public void AddScore()
     {
+        Score.text = timerCounter.GetCurrentScore().ToString();
         scoreBehavior.AddScore((long)timerCounter.GetCurrentScore());
     }
 }
