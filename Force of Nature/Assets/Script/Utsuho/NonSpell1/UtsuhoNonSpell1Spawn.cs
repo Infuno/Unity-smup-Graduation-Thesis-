@@ -29,7 +29,7 @@ public class UtsuhoNonSpell1Spawn : MonoBehaviour
 
     public void SpawnDirection()
     {
-        float RotagePoint = 360 / NumberOfBulletPoint;
+        float RotagePoint = 360f / NumberOfBulletPoint;
         for (int i = 0; i <= NumberOfBulletPoint-1; i++)
         {
             Instantiate(BulletPrefab, transform.position, transform.rotation * Quaternion.Euler(0f, 0f, RotagePoint * i));
@@ -62,6 +62,7 @@ public class UtsuhoNonSpell1Spawn : MonoBehaviour
         
         Moving = true;
         yield return new WaitForSeconds(1);
+        RotageAttack();
         animator.SetBool("Charge", true);
         yield return new WaitForSeconds(1);
         
@@ -77,5 +78,9 @@ public class UtsuhoNonSpell1Spawn : MonoBehaviour
         {
             MoveScript.ChangeLocation();
         }
+    }
+    private void RotageAttack()
+    {
+        transform.eulerAngles = new Vector3(0, 0, Random.Range(0f,360f));
     }
 }

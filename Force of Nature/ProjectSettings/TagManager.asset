@@ -7,6 +7,7 @@ TagManager:
   - Score
   - RedLazer
   - BlueLazer
+  - SUN
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class PlayerLife : MonoBehaviour
 {
     public GameObject[] Life;
     public int MaxLife;
-    public int CurrentLife;
+    public static int CurrentLife;
 
     private void Start()
     {
@@ -37,9 +37,5 @@ public class PlayerLife : MonoBehaviour
     {
         CurrentLife -= 1;
         DisplayLife();
-    }
-    public int GeCurrenttLife()
-    {
-        return CurrentLife;
     }
 }

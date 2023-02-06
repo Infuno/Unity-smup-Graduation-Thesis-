@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &84964211
 SpriteRenderer:
@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &445925166
 SpriteRenderer:
@@ -3824,7 +3824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &653735956
 SpriteRenderer:
@@ -4739,7 +4739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &819567191
 SpriteRenderer:
@@ -5121,7 +5121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &853010696
 SpriteRenderer:
@@ -5450,6 +5450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998b9c76247c55c4b98a29ca738c60ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YouDiedBackGround: {fileID: 0}
 --- !u!1 &889155312
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,6 +6700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998b9c76247c55c4b98a29ca738c60ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YouDiedBackGround: {fileID: 1028495950}
 --- !u!1001 &1021841998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7488,7 +7490,6 @@ MonoBehaviour:
   - {fileID: 1518002989}
   - {fileID: 421326943}
   MaxLife: 2
-  CurrentLife: 0
 --- !u!1 &1101466023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10412,6 +10413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998b9c76247c55c4b98a29ca738c60ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YouDiedBackGround: {fileID: 0}
 --- !u!1001 &1504554157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10664,7 +10666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 4
-  StartPosition: {x: 0, y: 7.9, z: 0}
+  StartPosition: {x: 0, y: 7.9, z: 1}
   ResetPosition: -7.4
 --- !u!212 &1532833405
 SpriteRenderer:
@@ -11308,7 +11310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1599278430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12580,7 +12582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802226808}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfb80175fcd7cd04daad7af666478e89, type: 3}
   m_Name: 

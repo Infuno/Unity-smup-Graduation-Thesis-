@@ -19,6 +19,10 @@ public class UtsuhoNonSpell3HeatSeekerBulletBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.layer == 2)
+        {
+            Destroy(this.gameObject);
+        }
         if (collision.gameObject.layer == 11 && IsChange == false)
         {
             this.GetComponent<Animator>().SetTrigger("IsChange");
@@ -56,7 +60,7 @@ public class UtsuhoNonSpell3HeatSeekerBulletBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         Tracking = false;
-        this.GetComponent<Rigidbody2D>().velocity = transform.up * Speed;
+        this.GetComponent<Rigidbody2D>().velocity = transform.up * 2;
     }
     IEnumerator TimeOut()
     {

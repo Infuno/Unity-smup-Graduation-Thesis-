@@ -77,7 +77,7 @@ public class UtsuhoSpell1Spawn : MonoBehaviour
     }
     public void SpawnSmallBullet()
     {
-        float RotagePoint = 360 / NumberOfBulletPoint;
+        float RotagePoint = 360f / NumberOfBulletPoint;
         SmallBulletSpawner.localEulerAngles += new Vector3(0, 0, 0.1f);
         if (BulletCooldown > RateOfFire && ShootSmallBullet == true)
         {

@@ -4,6 +4,10 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     public Sound[] sounds;
     void Awake()
     {
