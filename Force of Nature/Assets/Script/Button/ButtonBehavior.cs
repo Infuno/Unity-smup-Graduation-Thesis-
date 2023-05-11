@@ -26,4 +26,8 @@ public class ButtonBehavior : MonoBehaviour
         SceneManager.LoadScene(2);
         FindObjectOfType<AudioManager>().Play("Click");
     }
+    public void ExitProgram()
+    {
+        Application.Quit();
+    }
 }

@@ -6,9 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class YouDiedButtonBehavior : MonoBehaviour
 {
+    public GameObject PauseMenu;
     public void Continue()
     {
         print("Continue");
+    }
+    public void Retry2()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1.0f;
+        print("Retry");
     }
     public void Retry()
     {
@@ -21,5 +28,10 @@ public class YouDiedButtonBehavior : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
         print("Exit");
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1.0f;
+        PauseMenu.SetActive(false);
     }
 }

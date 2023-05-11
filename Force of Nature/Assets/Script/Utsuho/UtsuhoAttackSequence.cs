@@ -51,7 +51,6 @@ public class UtsuhoAttackSequence : MonoBehaviour
     }
     private void Regenerate()
     {
-        TimeOutObject.SetActive(false);
         enemyHealth.CurrentHealth += enemyHealth.MaxHealth / 200;
         enemyCollider.enabled = false;
         if (enemyHealth.CurrentHealth >= enemyHealth.MaxHealth)
@@ -96,6 +95,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 1)
         {
+            TimeOutObject.SetActive(false);
             FindObjectOfType<AudioManager>().Play("Caution");
             CautionUp.SetActive(true);
             CautionDown.SetActive(true);
@@ -115,6 +115,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 2)
         {
+            TimeOutObject.SetActive(false);
             BonusHUD.SetActive(true);
 
             FindObjectOfType<AudioManager>().Play("SpellBreak");
@@ -130,6 +131,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 3)
         {
+            TimeOutObject.SetActive(false);
             FindObjectOfType<AudioManager>().Play("Caution");
             CautionUp.SetActive(true);
             CautionDown.SetActive(true);
@@ -149,6 +151,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 4)
         {
+            TimeOutObject.SetActive(false);
             BonusHUD.SetActive(true);
 
             FindObjectOfType<AudioManager>().Play("SpellBreak");
@@ -164,6 +167,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 5)
         {
+            TimeOutObject.SetActive(false);
             FindObjectOfType<AudioManager>().Play("Caution");
             CautionUp.SetActive(true);
             CautionDown.SetActive(true);
@@ -183,6 +187,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 6)
         {
+            TimeOutObject.SetActive(false);
             SpellBackground3.SetActive(false);
             SpellBackground4.SetActive(false);
             timerCounter.SetMaxScore(20000000);
@@ -204,6 +209,7 @@ public class UtsuhoAttackSequence : MonoBehaviour
                 }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 7)
         {
+            TimeOutObject.SetActive(false);
             LastSpell.SetActive(false);
             SpellBackground1.SetActive(false);
             SpellBackground2.SetActive(false);

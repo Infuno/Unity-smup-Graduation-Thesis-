@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
     {
         return CurrentHealth;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         /*if(Input.GetKeyUp(KeyCode.C))
         {
@@ -63,7 +63,6 @@ public class PlayerHealth : MonoBehaviour
             this.GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(ReSpawn());
         }
-            StartCoroutine(GameOver());
     }
     IEnumerator ReSpawn()
     {
@@ -91,15 +90,6 @@ public class PlayerHealth : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         this.GetComponent<CircleCollider2D>().enabled = true;
-    }
-    IEnumerator GameOver()
-    {
-        if (PlayerLife.CurrentLife == 0)
-        {
-            GameOverPanel.SetActive(true);
-            yield return new WaitForSeconds(0.3f);
-            Time.timeScale = 0;
-        }
     }
 
 }

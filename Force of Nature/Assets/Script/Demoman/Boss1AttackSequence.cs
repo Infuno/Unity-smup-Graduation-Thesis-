@@ -39,7 +39,6 @@ public class Boss1AttackSequence : MonoBehaviour
     }
     private void Regenerate()
     {
-        TimeOutObject.SetActive(false);
         enemyHealth.CurrentHealth += enemyHealth.MaxHealth /200;
         enemyCollider.enabled = false;
         if (enemyHealth.CurrentHealth >= enemyHealth.MaxHealth)
@@ -71,6 +70,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if(enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase ==1)
         {
+            TimeOutObject.SetActive(false);
             timerCounter.SetMaxScore(1500000);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(true);
@@ -86,6 +86,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 2)
         {
+            TimeOutObject.SetActive(false);
             BonusHUD.SetActive(true);
             FindObjectOfType<AudioManager>().Play("SpellBreak");
             SpellHUD.SetActive(false);
@@ -100,6 +101,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 3)
         {
+            TimeOutObject.SetActive(false);
             timerCounter.SetMaxScore(3000000);
             timerCounter.BonusScoreText.text = ("3000000");
             FindObjectOfType<AudioManager>().Play("SpellBreak");
@@ -116,6 +118,7 @@ public class Boss1AttackSequence : MonoBehaviour
         }
         if (enemyHealth.GetCurrentHealth() <= 0f && CurrentPhase == 4)
         {
+            TimeOutObject.SetActive(false);
             BonusHUD.SetActive(true);
             this.GetComponent<AudioSource>().enabled = true;
             TimeOutObject.SetActive(false);
